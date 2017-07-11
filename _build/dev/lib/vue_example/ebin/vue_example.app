@@ -1,0 +1,10 @@
+{application,vue_example,
+             [{applications,[kernel,stdlib,elixir,logger,runtime_tools,
+                             postgrex,ecto]},
+              {description,"vue_example"},
+              {modules,['Elixir.VueExample.Application',
+                        'Elixir.VueExample.Repo']},
+              {registered,[]},
+              {vsn,"0.0.1"},
+              {mod,{'Elixir.VueExample.Application',[]}},
+              {extra_applications,[logger,runtime_tools]}]}.

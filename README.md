@@ -1,1 +1,1 @@
-# phoenix-vue-example
+# VueExample.Umbrella
