@@ -12,10 +12,25 @@
 // If you no longer want to use a dependency, remember
 // to also remove its path from "config.paths.watched".
 import "phoenix_html"
-
+import VueResource from 'vue-resource'
+import Main from "./main.vue"
+import router from "./router"
 // Import local files
 //
 // Local files can be imported directly using relative
 // paths "./socket" or full ones "web/static/js/socket".
 
 // import socket from "./socket"
+
+Vue.config.productionTip = false
+Vue.use(VueResource)
+
+/* eslint-disable no-new */
+
+const app = new Vue ({
+  el: '#app',
+  router,
+  render: h => h(Main)
+});
+
+export {app}

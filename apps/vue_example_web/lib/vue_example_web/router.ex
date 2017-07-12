@@ -19,6 +19,12 @@ defmodule VueExample.Web.Router do
     get "/", PageController, :index
   end
 
+  scope "/api", VueExample.Web.Api do
+    pipe_through(:api)
+
+    resources "/tasks", TaskController, only: [:index]
+  end
+
   # Other scopes may use custom stacks.
   # scope "/api", VueExample.Web do
   #   pipe_through :api
