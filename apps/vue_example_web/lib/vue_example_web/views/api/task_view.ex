@@ -10,8 +10,8 @@ defmodule VueExample.Web.Api.TaskView do
 
   def render("task.json", %{task: task}) do
     %{
-      name: task.name,
-      done: task.done
+      name: Faker.Lorem.sentence,
+      done: false
     }
   end
 end

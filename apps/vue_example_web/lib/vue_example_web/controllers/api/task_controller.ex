@@ -3,28 +3,7 @@ defmodule VueExample.Web.Api.TaskController do
   alias VueExample.Web.Api.TaskView
 
   def index(conn, _params) do
-    tasks = [
-      %{
-        name: "task 1",
-        done: false
-      },
-      %{
-        name: "task 2",
-        done: false
-      },
-      %{
-        name: "task 3",
-        done: false
-      },
-      %{
-        name: "task 4",
-        done: false
-      },
-      %{
-        name: "task 5",
-        done: false
-      }
-    ]
+    tasks = (1..5) |> Enum.to_list # Fetch tasks function
     
     conn
     |> render TaskView, "index.json", %{tasks: tasks}

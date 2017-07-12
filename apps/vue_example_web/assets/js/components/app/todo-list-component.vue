@@ -4,15 +4,20 @@
       <li
       v-bind:key="index"
       v-for="(item, index) in tasks">
-        {{ item.name }}
+        <task-item
+        v-on:status-changed="updateStatus(item)"
+        :task="item"></task-item>
       </li>
     </ul>
   </div>
 </template>
 
 <script>
+import TaskItem from "./task-item-component";
+
 export default {
-  name: "Example",
+  name: "TodoList",
+  components: {TaskItem},
   props: [],
   data() {
     return {
@@ -35,6 +40,9 @@ export default {
           alert("Oops! Something went wrong!");
         }
       )
+    },
+    updateStatus(item) {
+      item.done = !item.done;
     }
   },
   mounted() {

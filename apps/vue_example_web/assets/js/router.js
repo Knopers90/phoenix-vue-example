@@ -9,7 +9,7 @@ import ExternalLayout from "./layouts/external.vue";
 import PanelLayout from "./layouts/panel.vue";
 
 import Login from "./components/auth/login.vue";
-import Example from "./components/app/example.vue";
+import TodoList from "./components/app/todo-list-component.vue";
 
 const router = new VueRouter({
   mode: 'hash',
@@ -20,7 +20,7 @@ const router = new VueRouter({
       component: PanelLayout,
       meta: { requiresAuth: true },
       children: [
-        { path: '/example', component: Example },
+        { path: '/example', component: TodoList },
       ]
     },
     {
