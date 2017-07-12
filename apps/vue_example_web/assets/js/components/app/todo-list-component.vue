@@ -9,15 +9,18 @@
         :task="item"></task-item>
       </li>
     </ul>
+    <new-task-form
+    v-on:new-task="addTask"></new-task-form>
   </div>
 </template>
 
 <script>
 import TaskItem from "./task-item-component";
+import NewTaskForm from "./new-task-form.component";
 
 export default {
   name: "TodoList",
-  components: {TaskItem},
+  components: {TaskItem, NewTaskForm},
   props: [],
   data() {
     return {
@@ -40,6 +43,14 @@ export default {
           alert("Oops! Something went wrong!");
         }
       )
+    },
+    addTask(taskName) {
+      let task = {
+        name: taskName,
+        done: false
+      }
+      
+      this.tasks.push(task);
     },
     updateStatus(item) {
       item.done = !item.done;
